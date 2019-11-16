@@ -46,7 +46,7 @@ class MyTestCase(unittest.TestCase):
             self.assertEqual(self.calculator.result, int(row['Result']))
 
     def test_root_method_calculator(self):
-        test_data = CsvReader('Tests/Data/Square_Root.csv').data
+        test_data = CsvReader('Tests/Data/SquareRoot.csv').data
         for row in test_data:
             self.assertEqual(self.calculator.sq_root(float(row['Value 1'])), round(float(row['Result']), 8))
             self.assertEqual(self.calculator.result, round(float(row['Result']), 8))
