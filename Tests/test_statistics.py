@@ -19,8 +19,9 @@ class MyTestCase(unittest.TestCase):
         for row in self.test_data:
             self.assertEqual(self.statistics.mean(),float(row['Result Mean']) )
 
-#    def test_population_standard_deviation(self):
-#        self.assertEqual(self.statistics.stdev(), )
+    def test_population_standard_deviation(self):
+        for row in self.test_data:
+            self.assertEqual(round(self.statistics.stdev(),8),row['Result PStdev'] )
 
     def test_variance_of_population_portion(self):
         for row in self.test_data:
