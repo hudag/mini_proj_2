@@ -1,4 +1,4 @@
-from StaticMethods.division import division
+from Statistics.division import division
 
 def proportion(size, corr):
     try:
