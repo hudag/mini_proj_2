@@ -10,6 +10,7 @@ from Statistics.zscore import zscore
 from Statistics.proportion import proportion
 from Statistics.varprop import varprop
 from Statistics.pvalue import pvalue
+from Statistics.mode import mode
 from CsvReader.CsvReader import CsvReader
 
 class Statistics(Calculator):
@@ -64,4 +65,8 @@ class Statistics(Calculator):
 
     def pvalue(self):
         self.result = pvalue(self.data)
+        return self.result
+
+    def mode(self):
+        self.result = mode(self.data)
         return self.result

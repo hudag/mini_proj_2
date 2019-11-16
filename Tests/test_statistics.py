@@ -60,5 +60,9 @@ class MyTestCase(unittest.TestCase):
         for row in self.test_data:
             self.assertEqual(self.statistics.pvalue(), float(row['Result Pval']))
 
+    def test_mode(self):
+        for row in self.test_data:
+            self.assertEqual(self.statistics.mode(), float(row['Result Mode']))
+
 if __name__ == '__main__':
     unittest.main()
