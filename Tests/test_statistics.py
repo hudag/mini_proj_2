@@ -52,8 +52,9 @@ class MyTestCase(unittest.TestCase):
         for row in self.test_data:
             self.assertEqual(self.statistics.proportion(2,3), float(row['Result prop']))
 
-    #def test_varprop(self):
-
+    def test_varprop(self):
+        for row in self.test_data:
+            self.assertEqual(self.statistics.varprop(), float(row['Result varprop']))
 
 if __name__ == '__main__':
     unittest.main()

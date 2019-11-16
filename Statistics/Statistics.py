@@ -8,6 +8,7 @@ from Statistics.samplemean import samplemean
 from Statistics.samplestdev import samplestdev
 from Statistics.zscore import zscore
 from Statistics.proportion import proportion
+from Statistics.varprop import varprop
 from CsvReader.CsvReader import CsvReader
 
 class Statistics(Calculator):
@@ -54,4 +55,8 @@ class Statistics(Calculator):
 
     def proportion(self,size,corr):
         self.result = proportion(size,corr)
+        return self.result
+
+    def varprop(self,size,corr):
+        self.result = varprop(self.data,len(self.data))
         return self.result

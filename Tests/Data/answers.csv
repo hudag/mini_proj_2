@@ -1,2 +1,2 @@
-Result Mode,Result Median,Result Mean, Result samplemean,Result PStdev,Result SStdev ,Result stscore,Result Variance,Result varp,Result vars,Result concoef,Result z score,Result Confidence,Result Pval,Result prop
-4,4,3.333333333,0,0.94280904,1.41421356,0.70711,0.88888889,,,,0.70711,,,0.666666667
+Result Mode,Result Median,Result Mean, Result samplemean,Result PStdev,Result SStdev ,Result stscore,Result Variance,Result varprop,Result vars,Result concoef,Result z score,Result Confidence,Result Pval,Result prop
+4,4,3.333333333,0,0.94280904,1.41421356,0.70711,0.88888889,2,,,0.70711,,,0.666666667
