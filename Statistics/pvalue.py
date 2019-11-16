@@ -3,7 +3,7 @@ from Statistics.mean import mean
 from Calculator.division import division
 from Calculator.subtraction import subtraction
 
-def array(data):
+def pvalue(data):
     try:
         x = mean(data)
         y = stdev(data)

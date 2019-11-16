@@ -56,5 +56,9 @@ class MyTestCase(unittest.TestCase):
         for row in self.test_data:
             self.assertEqual(self.statistics.varprop(), float(row['Result varprop']))
 
+    def test_pvalue(self):
+        for row in self.test_data:
+            self.assertEqual(self.statistics.pvalue(), float(row['Result Pval']))
+
 if __name__ == '__main__':
     unittest.main()
