@@ -1,4 +1,5 @@
 import unittest
+import math
 from Calculator.Calculator import Calculator
 from Statistics.Statistics import Statistics
 from CsvReader.CsvReader import CsvReader
@@ -23,7 +24,7 @@ class MyTestCase(unittest.TestCase):
 
     def test_variance_of_population_portion(self):
         for row in self.test_data:
-        self.assertEqual(self.statistics.popvar(), float(row['Result Variance']))
+            self.assertEqual(round(self.statistics.popvar(),8), round(float(row['Result Variance']),8))
 
 
 if __name__ == '__main__':
