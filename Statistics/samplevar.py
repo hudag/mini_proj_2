@@ -6,7 +6,7 @@ from Calculator.division import division
 
 def samplevar(data):
     total=0
-    x = samplemean(data)
+    x = samplemean(data,3)
     n = len(data)
     for i in data:
         total = addition(total, square(subtraction(x, i)))
