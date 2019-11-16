@@ -7,4 +7,4 @@ def stscore(data):
     x = mean(data)
     y = stdev(data)
     num = division(y,subtraction(x,data[0]))
-    return round(num,5)
+    return round(num,5) 
