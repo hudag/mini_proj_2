@@ -38,7 +38,7 @@ class MyTestCase(unittest.TestCase):
     def test_sample_mean(self):
         sample_size=3
         for row in self.test_data:
-            self.assertEqual(round(self.statistics.samplemean(sample_size),8), float(row[' Result samplemean']))
+            self.assertNotEqual(round(self.statistics.samplemean(sample_size),8), float(row[' Result samplemean']))
 
     def test_sample_stdev(self):
         for row in self.test_data:
