@@ -5,15 +5,10 @@ from Calculator.square import square
 from Calculator.division import division
 
 def popvar(data):
-    try:
-        total = 0
-        x = mean(data)
-        n = len(data)
-        for i in data:
-            total = addition(total,square(subtraction(x, i)))
-        populationvar = division(n,total)
-    except ZeroDivisionError:
-        print("Error: Number Not Valid")
-    except ValueError:
-        print("Error: Only Numeric Values")
-        return populationvar
+    total = 0
+    x = mean(data)
+    n = len(data)
+    for i in data:
+        total = addition(total,square(subtraction(x, i)))
+    populationvar = division(n,total)
+    return populationvar
