@@ -7,8 +7,9 @@ class Statistics(Calculator):
 
     def __init__(self, filepath):
         self.Data = CsvReader(filepath)
+        self.data = []
         for row in self.Data:
-            self.data.append(row)
+            self.data.append(row['Value 1'])
         super().__init__()
 
     def mean(self):
