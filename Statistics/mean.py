@@ -7,3 +7,7 @@ def mean(data):
     for num in data:
         total = addition(total, num)
     return division(num_values,total)
+    except ZeroDivisionError:
+        print("Error: Number Not Valid")
+    except ValueError:
+        print("Error: Only Numeric Values")

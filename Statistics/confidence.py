@@ -17,3 +17,7 @@ def confidenceinterval(data):
     a = subtraction(mean, err)
     b = addition(mean, err)
     return a, b
+    except ZeroDivisionError:
+        print("Error: Number Not Valid")
+    except ValueError:
+        print("Error: Only Numeric Values")
