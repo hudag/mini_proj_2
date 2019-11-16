@@ -1,3 +1,3 @@
 def square(a):
-    d = a**2
+    d = float(a)**2
     return d
