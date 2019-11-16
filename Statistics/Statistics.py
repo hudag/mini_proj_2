@@ -1,6 +1,7 @@
 from Calculator.Calculator import Calculator
 from Statistics.mean import mean
 from Statistics.popvar import popvar
+from Statistics.stdev import stdev
 from CsvReader.CsvReader import CsvReader
 
 class Statistics(Calculator):
