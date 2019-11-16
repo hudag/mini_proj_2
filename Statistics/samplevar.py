@@ -8,7 +8,7 @@ def samplevar(data):
     total=0
     x = samplemean(data)
     n = len(data)
-    for i in data
+    for i in data:
         total = addition(total, square(subtraction(x, i)))
     samplevar = division(n-1,total)
-    return samplevar b
+    return samplevar

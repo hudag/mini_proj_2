@@ -5,6 +5,7 @@ from Statistics.stdev import stdev
 from Statistics.median import median
 from Statistics.stscore import stscore
 from Statistics.samplemean import samplemean
+from Statistics.samplestdev import samplestdev
 from CsvReader.CsvReader import CsvReader
 
 class Statistics(Calculator):
@@ -39,4 +40,8 @@ class Statistics(Calculator):
 
     def samplemean(self, sample_size):
         self.result = samplemean(self.data,sample_size)
+        return self.result
+
+    def samplestdev(self, sample_size):
+        self.result = samplestdev(self.data,sample_size)
         return self.result
