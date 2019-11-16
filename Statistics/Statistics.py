@@ -52,6 +52,6 @@ class Statistics(Calculator):
         self.result = zscore(self.data)
         return self.result
 
-    def proportion(self):
-        self.result = proportion(self.data)
+    def proportion(self,size,corr):
+        self.result = proportion(size,corr)
         return self.result

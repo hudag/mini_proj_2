@@ -50,7 +50,7 @@ class MyTestCase(unittest.TestCase):
 
     def test_proportion(self):
         for row in self.test_data:
-            self.assertEqual(self.statistics.proportion(), float(row['Result prop']))
+            self.assertEqual(self.statistics.proportion(2,3), float(row['Result prop']))
 
     #def test_varprop(self):
 
