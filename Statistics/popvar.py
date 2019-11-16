@@ -10,5 +10,5 @@ def popvar(data):
     n = len(data)
     for i in data:
         total = addition(square(subtraction(x, i)))
-    populationvar = division(total, n)
+    populationvar = division(n,total)
     return populationvar
