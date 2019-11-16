@@ -6,5 +6,5 @@ from Calculator.subtraction import subtraction
 def stscore(data):
     x = mean(data)
     y = stdev(data)
-    num = division(subtraction(i,x),y)
-    return num
+    num = division(y,subtraction(x,data[0]))
+    return round(num,5)

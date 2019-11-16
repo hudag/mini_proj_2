@@ -31,6 +31,10 @@ class MyTestCase(unittest.TestCase):
         for row in self.test_data:
             self.assertEqual(self.statistics.median(), float(row['Result Median']))
 
+    def test_standardized_score(self):
+        for row in self.test_data:
+            self.assertEqual(self.statistics.stscore(), float(row['Result stscore']))
+
 
 if __name__ == '__main__':
     unittest.main()

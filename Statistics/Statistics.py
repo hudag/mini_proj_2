@@ -3,6 +3,7 @@ from Statistics.mean import mean
 from Statistics.popvar import popvar
 from Statistics.stdev import stdev
 from Statistics.median import median
+from Statistics.stscore import stscore
 from CsvReader.CsvReader import CsvReader
 
 class Statistics(Calculator):
@@ -29,4 +30,8 @@ class Statistics(Calculator):
 
     def median(self):
         self.result = median(self.data)
+        return self.result
+
+    def stscore(self):
+        self.result = stscore(self.data)
         return self.result
