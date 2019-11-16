@@ -1,7 +1,7 @@
-from StaticMethods.proportion import proportion
-from StaticMethods.division import division
-from StaticMethods.multiplication import multiplication
-from StaticMethods.subtraction import subtraction
+from Statistics.proportion import proportion
+from Calculator.division import division
+from Calculator.multiplication import multiplication
+from Calculator.subtraction import subtraction
 
 def varprop(data, corr):
     try:
