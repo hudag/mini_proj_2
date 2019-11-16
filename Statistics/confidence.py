@@ -1,18 +1,19 @@
 from Statistics.samplemean import samplemean
 from Statistics.stdev import stdev
 from Calculator.division import division
-from Calculator.squareroot import squareroot
+from Calculator.square_root import square_root
 from Calculator.multiplication import multiplication
 from Calculator.subtraction import subtraction
 from Calculator.addition import addition
+from Statistics.zscore import zscore
 
-def confidence_interval(data):
-    z_value = 1.05
-    mean =samplemean(data)
-    sd = tdev(data)
+def confidenceinterval(data):
+    z = zscore(data)
+    mean = samplemean(data)
+    sd = stdev(data)
     x = len(data)
-    y = division(squareroot(x), sd)
-    margin_of_error = multiplication(z_value, y)
-    a = subtraction(mean, margin_of_error)
-    b = addition(mean, margin_of_error)
+    y = division(square_root(x), sd)
+    err = multiplication(z, y)
+    a = subtraction(mean, err)
+    b = addition(mean, err)
     return a, b
