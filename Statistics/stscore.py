@@ -4,10 +4,11 @@ from Calculator.division import division
 from Calculator.subtraction import subtraction
 
 def stscore(data):
-    x = mean(data)
-    y = stdev(data)
-    num = division(y,subtraction(x,data[0]))
-    return round(num,5)
+    try:
+        x = mean(data)
+        y = stdev(data)
+        num = division(y,subtraction(x,data[0]))
+        return round(num,5)
     except ZeroDivisionError:
         print("Error: Number Not Valid")
     except ValueError:

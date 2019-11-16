@@ -4,10 +4,11 @@ from StaticMethods.multiplication import multiplication
 from StaticMethods.subtraction import subtraction
 
 def varprop(data, corr):
-    n = len(data)
-    prop = proportion(n, corr)
-    res = division(n, multiplication(prop, subtraction(1, prop)))
-    return res
+    try:
+        n = len(data)
+        prop = proportion(n, corr)
+        res = division(n, multiplication(prop, subtraction(1, prop)))
+        return res
     except ZeroDivisionError:
         print("Error: Number Not Valid")
     except ValueError:
