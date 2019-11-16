@@ -10,3 +10,7 @@ def samplemean(data, sample_size):
     for num in sample:
         total = addition(total, num)
     return division(num_values,total)
+    except ZeroDivisionError:
+        print("Error: Number Not Valid")
+    except ValueError:
+        print("Error: Only Numeric Values")

@@ -14,3 +14,7 @@ def median(data):
         mdn = data[int(division(2,n))]
 
     return mdn
+    except ZeroDivisionError:
+        print("Error: Number Not Valid")
+    except ValueError:
+        print("Error: Only Numeric Values")

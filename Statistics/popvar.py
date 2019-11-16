@@ -12,3 +12,7 @@ def popvar(data):
         total = addition(total,square(subtraction(x, i)))
     populationvar = division(n,total)
     return populationvar
+    except ZeroDivisionError:
+        print("Error: Number Not Valid")
+    except ValueError:
+        print("Error: Only Numeric Values")

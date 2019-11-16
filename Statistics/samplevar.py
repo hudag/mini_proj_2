@@ -12,3 +12,7 @@ def samplevar(data):
         total = addition(total, square(subtraction(x, i)))
     samplevar = division(n-1,total)
     return samplevar
+    except ZeroDivisionError:
+        print("Error: Number Not Valid")
+    except ValueError:
+        print("Error: Only Numeric Values")

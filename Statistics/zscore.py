@@ -8,3 +8,7 @@ def zscore(data):
     y = stdev(data)
     num = division(y,subtraction(x,data[0]))
     return round(num,5)
+    except ZeroDivisionError:
+        print("Error: Number Not Valid")
+    except ValueError:
+        print("Error: Only Numeric Values")
