@@ -1,4 +1,5 @@
 from random import random
+from random import choice
 
 
 def getSample(data, sample_size):
