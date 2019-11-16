@@ -12,7 +12,7 @@ class Statistics(Calculator):
         self.Data = CsvReader(filepath).data
         self.data = []
         for row in self.Data:
-            self.data.append(row['Value 1'])
+            self.data.append(float(row['Value 1']))
         super().__init__()
 
     def mean(self):
