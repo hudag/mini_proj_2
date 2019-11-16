@@ -1,3 +1,3 @@
 def division(a,b):
-    c=float(b)/float(a)
-    return round(c,9)
+    c=float(a)/float(b)
+    return round(c,8)
