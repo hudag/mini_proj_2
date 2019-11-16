@@ -1,10 +1,11 @@
-from StaticMethods.division import division
+from Calculator.division import division
 
 def proportion(size, corr):
-    if corr is None:
-        corr = 3
-    result = division(corr, size)
-    return result
+    try:
+        if corr is None:
+            corr = 3
+        result = division(corr, size)
+        return result
     except ZeroDivisionError:
         print("Error: Number Not Valid")
     except ValueError:
