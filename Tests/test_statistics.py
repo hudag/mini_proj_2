@@ -35,6 +35,10 @@ class MyTestCase(unittest.TestCase):
         for row in self.test_data:
             self.assertEqual(self.statistics.stscore(), float(row['Result stscore']))
 
+    def test_sample_mean(self):
+        sample_size=2
+        for row in self.test_data:
+            self.assertEqual(round(self.statistics.samplemean(sample_size),8), float(row[' Result samplemean']))
 
 if __name__ == '__main__':
     unittest.main()
