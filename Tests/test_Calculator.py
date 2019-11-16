@@ -1,5 +1,5 @@
 import unittest
-from Calculator import Calculator
+from Calculator.Calculator import Calculator
 from CsvReader import CsvReader
 from pprint import pprint
 
