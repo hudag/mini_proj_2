@@ -1,2 +1,2 @@
-Result Mode,Result Mean,Result Median,Result PStdev,Result Variance,Result SStdev ,Result z
-4,3.333333333,4,0.94280904,0.88888889,1.15470053,
+Result Mode,Result Mean,Result Median,Result PStdev,Result Variance,Result SStdev ,Result stscore
+4,3.333333333,4,0.94280904,0.88888889,1.15470053,0.71064
