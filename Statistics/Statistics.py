@@ -20,3 +20,7 @@ class Statistics(Calculator):
     def popvar(self):
         self.result = popvar(self.data)
         return self.result
+
+    def stdev(self):
+        self.result = stdev(self.data)
+        return self.result
