@@ -44,6 +44,10 @@ class MyTestCase(unittest.TestCase):
         for row in self.test_data:
             self.assertEqual(int(self.statistics.samplestdev()), int(float(row['Result SStdev '])))
 
+    def test_zscore(self):
+        for row in self.test_data:
+            self.assertEqual(self.statistics.stscore(), float(row['Result z score']))
+
     def test_proportion(self):
         for row in self.test_data:
             self.assertEqual(self.statistics.proportion(), float(row['Result prop']))
