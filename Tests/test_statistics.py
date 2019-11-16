@@ -9,20 +9,21 @@ class MyTestCase(unittest.TestCase):
 
     def setUp(self) -> None:
         self.statistics = Statistics('Tests/Data/dataset.csv')
+        self.test_data = CsvReader('Tests/Data/answers.csv').data
 
     def test_instantiate_statistics(self):
         self.assertIsInstance(self.statistics, Statistics)
 
     def test_population_mean(self):
-        test_data= CsvReader('Tests/Data/answers.csv').data
-        for row in test_data:
+        for row in self.test_data:
             self.assertEqual(self.statistics.mean(),float(row['Result Mean']) )
 
 #    def test_population_standard_deviation(self):
 #        self.assertEqual(self.statistics.stdev(), )
 
-#    def test_variance_of_population_portion(self):
-#        self.assertEqual(self.statistics.popvar(), )
+    def test_variance_of_population_portion(self):
+        for row in self.test_data:
+        self.assertEqual(self.statistics.popvar(), float(row['Result Variance']))
 
 
 if __name__ == '__main__':
