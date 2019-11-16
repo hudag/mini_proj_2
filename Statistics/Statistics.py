@@ -6,7 +6,7 @@ class Statistics(Calculator):
     data = []
 
     def __init__(self, filepath):
-        self.Data = CsvReader(filepath)
+        self.Data = CsvReader(filepath).data
         self.data = []
         for row in self.Data:
             self.data.append(row['Value 1'])
