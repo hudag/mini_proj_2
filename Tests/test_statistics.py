@@ -16,7 +16,7 @@ class MyTestCase(unittest.TestCase):
     def test_population_mean(self):
         test_data= CsvReader('Tests/Data/answers.csv').data
         for row in test_data:
-            self.assertEquale(self.statistics.mean(),float(row['Result Mean']) )
+            self.assertEqual(self.statistics.mean(),float(row['Result Mean']) )
 
 #    def test_population_standard_deviation(self):
 #        self.assertEqual(self.statistics.stdev(), )
