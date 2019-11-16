@@ -42,6 +42,6 @@ class Statistics(Calculator):
         self.result = samplemean(self.data,sample_size)
         return self.result
 
-    def samplestdev(self, sample_size):
-        self.result = samplestdev(self.data,sample_size)
+    def samplestdev(self):
+        self.result = samplestdev(self.data)
         return self.result
