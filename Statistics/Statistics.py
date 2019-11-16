@@ -57,6 +57,6 @@ class Statistics(Calculator):
         self.result = proportion(size,corr)
         return self.result
 
-    def varprop(self,size,corr):
+    def varprop(self):
         self.result = varprop(self.data,len(self.data))
         return self.result
