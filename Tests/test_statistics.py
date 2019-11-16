@@ -42,7 +42,7 @@ class MyTestCase(unittest.TestCase):
 
     def test_sample_stdev(self):
         for row in self.test_data:
-            self.assertEqual(int(self.statistics.samplestdev()), int(row['Result SStdev ']))
+            self.assertEqual(int(self.statistics.samplestdev()), int(float(row['Result SStdev '])))
 
 
 
