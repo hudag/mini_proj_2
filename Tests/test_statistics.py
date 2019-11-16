@@ -27,6 +27,10 @@ class MyTestCase(unittest.TestCase):
         for row in self.test_data:
             self.assertEqual(round(self.statistics.popvar(),8), round(float(row['Result Variance']),8))
 
+    def test_median(self):
+        for row in self.test_data:
+            self.assertEqual(self.statistics.median(), float(row['Result Median']))
+
 
 if __name__ == '__main__':
     unittest.main()

@@ -7,10 +7,10 @@ def median(data):
     data.sort()
 
     if n % 2 == 0:
-        median1 = data[division(2,n)]
-        median2 = data[subtraction(1,division(2,n))]
-        median = division(2,addition(median1,median2))
+        median1 = data[int(division(2,n))]
+        median2 = data[int(subtraction(1,division(2,n)))]
+        mdn = division(2,addition(median1,median2))
     else:
-        median = data[division(2,n)]
+        mdn = data[int(division(2,n))]
 
-    return median
+    return mdn
