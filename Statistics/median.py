@@ -9,8 +9,8 @@ def median(data):
     if n % 2 == 0:
         median1 = data[division(2,n)]
         median2 = data[subtraction(1,division(2,n))]
-        median = division(2,addition(median1,median2))
+        mdn = division(2,addition(median1,median2))
     else:
-        median = data[division(2,n)]
+        mdn = data[division(2,n)]
 
-    return median
+    return mdn
