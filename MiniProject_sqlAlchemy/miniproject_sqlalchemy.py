@@ -117,6 +117,7 @@ session.add_all([i1, i2, i3, i4, i5, i6, i7, i8])
 session.commit()
 
 #PART 2--------------------------------------------------------------------------
+print("_____________________________PART 2______________________________")
 print("\nPrint All")
 all_customer = session.query(Customer).all()
 for customer in all_customer:
@@ -207,7 +208,18 @@ all_customer = session.query(
 for customer in all_customer:
     pprint(customer)
 
+print("_____________________________PART 3______________________________")
+all_customer = session.query(Customer.town).filter(Customer.id  < 10).distinct().all()
+for customer in all_customer:
+    pprint(customer)
+all_customer = session.query(
+    func.count(distinct(Customer.town)),
+    func.count(Customer.town)
+).all()
+for customer in all_customer:
+    pprint(customer)
 
+print("_____________________________PART 4______________________________")
 
 #session.commit()
 
