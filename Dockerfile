@@ -6,4 +6,4 @@ RUN pip install -r ./requirements.txt
 WORKDIR /web
 ENTRYPOINT ["python"]
 WORKDIR /web
-CMD ["/web/Database/sqlalchemy_test.py"]
+CMD ["/web/MiniProject_sqlAlchemy/miniproject_sqlalchemy.py"]
