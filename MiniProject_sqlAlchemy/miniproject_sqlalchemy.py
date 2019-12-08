@@ -208,6 +208,7 @@ all_customer = session.query(
 for customer in all_customer:
     pprint(customer)
 
+#PART 3-----------------------------------------------------------------------------
 print("_____________________________PART 3______________________________")
 all_customer = session.query(Customer.town).filter(Customer.id  < 10).distinct().all()
 for customer in all_customer:
@@ -219,6 +220,7 @@ all_customer = session.query(
 for customer in all_customer:
     pprint(customer)
 
+#PART 4-----------------------------------------------------------------------------
 print("_____________________________PART 4______________________________")
 
 #session.commit()
