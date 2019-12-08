@@ -1,10 +1,11 @@
-from sqlalchemy import Column, ForeignKey, Integer, String, Float, or_, and_, not_,desc,func,distinct
+from sqlalchemy import Column, ForeignKey, Integer, String, Float, or_, and_, not_,desc,func,cast, Date, distinct, union,Numeric,DateTime
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import relationship
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from pprint import pprint
-
+import datetime
+import math
 
 engine = create_engine('sqlite:////web/Sqlite-Data/example.db')
 session = sessionmaker(bind=engine)
@@ -222,6 +223,12 @@ for customer in all_customer:
 
 #PART 4-----------------------------------------------------------------------------
 print("_____________________________PART 4______________________________")
+all_customer = session.query(
+    cast(math.pi, Integer),
+    cast(math.pi, Numeric(10,2)),
+).all()
+for customer in all_customer:
+    pprint(customer)
 
 #session.commit()
 
