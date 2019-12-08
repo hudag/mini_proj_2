@@ -1,4 +1,4 @@
-from sqlalchemy import Column, ForeignKey, Integer, String, Float
+from sqlalchemy import Column, ForeignKey, Integer, String, Float, or_, and_, not_,desc,func,distinct
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import relationship
 from sqlalchemy import create_engine
@@ -90,7 +90,7 @@ c5 = Customer(first_name='Toby',
               username='tmiller',
               email='tmiller@example.com',
               address='1662 Kinney Street',
-              town='Wolfden'
+              town='Norfolk'
               )
 
 c6 = Customer(first_name='Scott',
@@ -115,4 +115,99 @@ i8 = Item(name='Water Bottle', cost_price=20.89, selling_price=25, quantity=50)
 
 session.add_all([i1, i2, i3, i4, i5, i6, i7, i8])
 session.commit()
+
+#PART 2--------------------------------------------------------------------------
+print("\nPrint All")
+all_customer = session.query(Customer).all()
+for customer in all_customer:
+    pprint(customer.__dict__)
+
+all_item = session.query(Item).all()
+for item in all_item:
+    pprint(item.__dict__)
+
+print("\nPrint Count of both tables")
+all_customers = session.query(Customer).count()
+pprint(all_customers)
+all_items = session.query(Item).count()
+pprint(all_items)
+
+print("\nPrint first rows")
+all_customer = session.query(Customer).first()
+all_items = session.query(Item).first()
+pprint(all_customer.__dict__)
+pprint(all_items.__dict__)
+
+print("\nPrint using sql and or not in notin between like limit offset orderby")
+all_customer = session.query(Customer).filter(or_(
+    Customer.town == 'Peterbrugh',
+    Customer.town == 'Norfolk'
+)).all()
+for customer in all_customer:
+    pprint(customer.__dict__)
+
+print("_______________________________________________________________")
+all_customer = session.query(Customer).filter(and_(
+    Customer.first_name == 'John',
+    Customer.town == 'Norfolk'
+)).all()
+for customer in all_customer:
+    pprint(customer.__dict__)
+
+print("_______________________________________________________________")
+all_customer = session.query(Customer).filter(and_(
+    Customer.first_name == 'John',
+    not_(
+        Customer.town == 'Peterbrugh',
+    )
+)).all()
+for customer in all_customer:
+    pprint(customer.__dict__)
+
+print("_______________________________________________________________")
+all_customer = session.query(Customer).filter(Customer.first_name.in_(['Toby', 'Sarah'])).all()
+for customer in all_customer:
+    pprint(customer.__dict__)
+
+print("_______________________________________________________________")
+all_customer = session.query(Customer).filter(Customer.first_name.notin_(['Toby', 'Sarah'])).all()
+for customer in all_customer:
+    pprint(customer.__dict__)
+
+print("_______________________________________________________________")
+all_item = session.query(Item).filter(Item.cost_price.between(10, 50)).all()
+for item in all_item:
+    pprint(item.__dict__)
+
+print("_______________________________________________________________")
+all_item = session.query(Item).filter(Item.name.like("%r")).all()
+for item in all_item:
+    pprint(item.__dict__)
+
+print("_______________________________________________________________")
+all_customer = session.query(Customer).limit(2).all()
+for customer in all_customer:
+    pprint(customer.__dict__)
+
+print("_______________________________________________________________")
+all_customer = session.query(Customer).limit(2).offset(2).all()
+for customer in all_customer:
+    pprint(customer.__dict__)
+
+print("_______________________________________________________________")
+all_item = session.query(Item).filter(Item.name.ilike("wa%")).order_by(desc(Item.cost_price)).all()
+for item in all_item:
+    pprint(item.__dict__)
+
+print("_______________________________________________________________")
+all_customer = session.query(
+    func.count("*").label('town_count'),
+    Customer.town
+).group_by(Customer.town).having(func.count("*") > 2).all()
+for customer in all_customer:
+    pprint(customer)
+
+
+
+#session.commit()
 
