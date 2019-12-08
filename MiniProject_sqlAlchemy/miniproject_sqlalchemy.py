@@ -230,5 +230,17 @@ all_customer = session.query(
 for customer in all_customer:
     pprint(customer)
 
+#PART 5-----------------------------------------------------------------------------
+print("_____________________________PART 5______________________________")
+s1 = session.query(Item.id, Item.name).filter(Item.name.like("Wa%"))
+s2 = session.query(Item.id, Item.name).filter(Item.name.like("%e%"))
+all_item = s1.union(s2).all()
+for item in all_item:
+    pprint(item)
+
+#PART 6-----------------------------------------------------------------------------
+print("_____________________________PART 6______________________________")
+
+
 #session.commit()
 
