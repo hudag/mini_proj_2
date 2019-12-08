@@ -253,5 +253,21 @@ session.commit()
 all_item = session.query(Item).all()
 for item in all_item:
     pprint(item.__dict__)
+
+#PART 7-----------------------------------------------------------------------------
+print("_____________________________PART 7______________________________")
+
+i = session.query(Item).filter(Item.name == 'Monitor').one()
+i
+session.delete(i)
+session.commit()
+
+all_item = session.query(Item).filter(
+    Item.name.ilike("W%")
+).delete(synchronize_session='fetch')
+session.commit()
+all_item = session.query(Item).all()
+for item in all_item:
+    pprint(item.__dict__)
 #session.commit()
 
