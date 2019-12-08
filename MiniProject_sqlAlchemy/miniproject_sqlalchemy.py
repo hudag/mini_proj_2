@@ -1,4 +1,4 @@
-from sqlalchemy import Column, ForeignKey, Integer, String, Float, or_, and_, not_,desc,func,cast, Date, distinct, union,Numeric,DateTime
+from sqlalchemy import Column, ForeignKey, Integer, String, Float, or_, and_, not_,desc,func,cast, Date, distinct, union,Numeric,DateTime,text
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import relationship
 from sqlalchemy import create_engine
@@ -269,5 +269,21 @@ session.commit()
 all_item = session.query(Item).all()
 for item in all_item:
     pprint(item.__dict__)
+
+#PART 8-----------------------------------------------------------------------------
+print("_____________________________PART 8______________________________")
+all_customer = session.query(Customer).filter(text("first_name = 'John'")).all()
+for customer in all_customer:
+    pprint(customer.__dict__)
+
+print("_________________________________________________________________")
+all_customer = session.query(Customer).filter(text("town like 'Nor%'")).all()
+for customer in all_customer:
+    pprint(customer.__dict__)
+
+print("_________________________________________________________________")
+all_customer = session.query(Customer).filter(text("town like 'Nor%'")).order_by(text("first_name, id desc")).all()
+for customer in all_customer:
+    pprint(customer.__dict__)
 #session.commit()
 
